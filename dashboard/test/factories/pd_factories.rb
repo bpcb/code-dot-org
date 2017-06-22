@@ -148,6 +148,11 @@ FactoryGirl.define do
     end
   end
 
+  factory :pd_teachercon_survey, class: 'Pd::TeacherconSurvey' do
+    association :pd_enrollment, factory: :pd_enrollment, strategy: :create
+    form_data {build :pd_teachercon_survey_hash}
+  end
+
   factory :pd_teachercon_survey_hash, class: 'Hash' do
     initialize_with do
       {

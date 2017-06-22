@@ -99,4 +99,8 @@ class Pd::TeacherconSurveyTest < ActiveSupport::TestCase
     refute survey.valid?
     assert_equal ["Form data howCouldImprove"], survey.errors.full_messages
   end
+
+  test 'summarize summarizes as expected' do
+    survey_1 = create
+  end
 end
