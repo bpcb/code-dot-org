@@ -44,30 +44,30 @@ export const styles = {
     paddingLeft: 20,
     paddingRight: 20,
   },
-  col1: {
+  sectionNameCol: {
     lineHeight: '52px',
     width: 310
   },
-  col2: {
+  courseCol: {
     width: 310
   },
-  col3: {
+  teacherCol: {
     lineHeight: '52px',
     width: 110
   },
-  col3Student: {
+  studentsCol: {
     width: 110
   },
-  col4: {
+  sectionCodeCol: {
     lineHeight: '52px',
     width: 210,
     borderRightWidth: 0,
   },
-  col4Rtl: {
+  sectionCodeColRtl: {
     lineHeight: '52px',
     width: 210
   },
-  col5: {
+  leaveCol: {
     width: 110,
     borderLeftWidth: 1,
     borderLeftColor: color.border_light_gray,
@@ -116,37 +116,37 @@ const SectionsTable = React.createClass({
       <table style={styles.table}>
         <thead>
           <tr style={styles.headerRow}>
-            <td style={{...styles.col, ...styles.col1}}>
+            <td style={{...styles.col, ...styles.sectionNameCol}}>
               <div style={styles.colText}>
                 {i18n.sectionName()}
               </div>
             </td>
-            <td style={{...styles.col, ...styles.col2}}>
+            <td style={{...styles.col, ...styles.courseCol}}>
               <div style={styles.colText}>
                 {i18n.course()}
               </div>
             </td>
             {isTeacher && (
-              <td style={{...styles.col, ...styles.col3}}>
+              <td style={{...styles.col, ...styles.studentsCol}}>
                 <div style={styles.colText}>
                   {i18n.students()}
                 </div>
               </td>
             )}
             {!isTeacher && (
-              <td style={{...styles.col, ...styles.col3}}>
+              <td style={{...styles.col, ...styles.teacherCol}}>
                 <div style={styles.colText}>
                   {i18n.teacher()}
                 </div>
               </td>
             )}
-            <td style={{...styles.col, ...(isRtl? styles.col4Rtl: styles.col4)}}>
+            <td style={{...styles.col, ...(isRtl? styles.sectionCodeColRtl: styles.sectionCodeCol)}}>
               <div style={styles.colText}>
                 {i18n.sectionCode()}
               </div>
             </td>
             {!isTeacher && (
-              <td style={{...styles.col, ...styles.col5}}>
+              <td style={{...styles.col, ...styles.leaveCol}}>
                 <div style={styles.colText}>
                 </div>
               </td>
@@ -162,12 +162,12 @@ const SectionsTable = React.createClass({
               }}
               key={index}
             >
-              <td style={{...styles.col, ...styles.col1}}>
+              <td style={{...styles.col, ...styles.sectionNameCol}}>
                 <a href={section.linkToProgress} style={styles.link}>
                   {section.name}
                 </a>
               </td>
-              <td style={{...styles.col, ...styles.col2}}>
+              <td style={{...styles.col, ...styles.courseCol}}>
                 <a href={section.linkToAssigned} style={styles.link}>
                   {section.assignedTitle}
                 </a>
@@ -184,11 +184,11 @@ const SectionsTable = React.createClass({
                   {section.teacherName}
                 </td>
               )}
-              <td style={{...styles.col, ...(isRtl? styles.col4Rtl: styles.col4)}}>
+              <td style={{...styles.col, ...(isRtl? styles.sectionCodeColRtl: styles.sectionCodeCol)}}>
                 {section.sectionCode}
               </td>
               {!isTeacher && (
-                <td style={{...styles.col, ...styles.col5}}>
+                <td style={{...styles.col, ...styles.leaveCol}}>
                   <ProgressButton
                     style={{marginLeft: 5}}
                     text={i18n.leaveSection()}
