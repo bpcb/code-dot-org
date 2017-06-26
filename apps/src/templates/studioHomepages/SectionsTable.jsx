@@ -45,7 +45,6 @@ export const styles = {
     paddingRight: 20,
   },
   sectionNameCol: {
-    lineHeight: '52px',
     width: 310
   },
   courseCol: {
