@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import HeaderBanner from '../HeaderBanner';
 import RecentCourses from './RecentCourses';
+import Sections from './Sections';
 import StudentResources from './StudentResources';
 import shapes from './shapes';
 import ProtectedStatefulDiv from '../ProtectedStatefulDiv';
@@ -15,7 +16,10 @@ const styles = {
 
 const StudentHomepage = React.createClass({
   propTypes: {
-    courses: shapes.courses
+    courses: shapes.courses,
+    sections: shapes.sections,
+    isRtl: React.PropTypes.bool.isRequired,
+    canLeave: React.PropTypes.bool.isRequired
   },
 
   componentDidMount() {
@@ -24,7 +28,7 @@ const StudentHomepage = React.createClass({
   },
 
   render() {
-    const { courses } = this.props;
+    const { courses, sections, isRtl, canLeave } = this.props;
 
     return (
       <div>
@@ -41,7 +45,14 @@ const StudentHomepage = React.createClass({
           courses={courses}
           showAllCoursesLink={true}
           header={i18n.recentCourses()}
-          isRtl={false}
+          isRtl={isRtl}
+        />
+
+        <Sections
+          sections={sections}
+          isRtl={isRtl}
+          isTeacher={false}
+          canLeave={canLeave}
         />
 
         <StudentResources/>
