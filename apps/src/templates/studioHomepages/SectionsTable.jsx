@@ -72,6 +72,7 @@ export const styles = {
     borderLeftWidth: 1,
     borderLeftColor: color.border_light_gray,
     borderLeftStyle: 'solid',
+    display: 'none'
   },
   colText: {
     color: color.charcoal,
