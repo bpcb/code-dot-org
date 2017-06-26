@@ -169,8 +169,6 @@ class Section < ActiveRecord::Base
       link_to_assigned = script_path(script)
     end
 
-    teacher = User.find_by id: user_id
-
     {
       id: id,
       name: name,
