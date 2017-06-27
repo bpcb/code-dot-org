@@ -105,12 +105,12 @@ const SectionsTable = React.createClass({
   },
 
   onLeave() {
-
-    console.log("How do I remove a student from a section?");
+    // const { canLeave } = this.props;
   },
 
   render() {
     const { sections, isRtl, isTeacher } = this.props;
+    // const { leaving } = this.state;
 
     return (
       <table style={styles.table}>
