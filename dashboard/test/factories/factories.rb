@@ -235,6 +235,9 @@ FactoryGirl.define do
     properties {{title: 'title', questions: [{text: 'test'}], options: {hide_submit: false}}}
   end
 
+  factory :bounce, parent: :level, class: Bounce do
+  end
+
   factory :artist, parent: :level, class: Artist do
   end
 
