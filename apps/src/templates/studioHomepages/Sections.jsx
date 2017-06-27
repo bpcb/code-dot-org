@@ -39,6 +39,7 @@ const Sections = React.createClass({
             type="sections"
             codeOrgUrlPrefix={codeOrgUrlPrefix}
             isRtl={isRtl}
+            isTeacher={false}
           />
         )}
       </ContentContainer>

@@ -63,6 +63,7 @@ describe('TeacherHomepage', () => {
         courses={[]}
         sections={[]}
         codeOrgUrlPrefix="http://localhost:3000/"
+        isRtl={false}
       />
     );
     const headerBanner = wrapper.childAt(0);
@@ -78,6 +79,7 @@ describe('TeacherHomepage', () => {
         courses={[]}
         sections={[]}
         codeOrgUrlPrefix="http://localhost:3000/"
+        isRtl={false}
       />
     );
     const termsReminderRef = wrapper.childAt(1);
@@ -91,6 +93,7 @@ describe('TeacherHomepage', () => {
         courses={[]}
         sections={[]}
         codeOrgUrlPrefix="http://localhost:3000/"
+        isRtl={false}
       />
     );
     const announcementsContainer = wrapper.childAt(3);
@@ -122,6 +125,7 @@ describe('TeacherHomepage', () => {
         courses={[]}
         sections={[]}
         codeOrgUrlPrefix="http://localhost:3000/"
+        isRtl={false}
       />
     );
     const announcementsContainer = wrapper.childAt(3);
@@ -163,6 +167,7 @@ describe('TeacherHomepage', () => {
         courses={[]}
         sections={sections}
         codeOrgUrlPrefix="http://localhost:3000/"
+        isRtl={false}
       />
     );
     // Check if Sections receives correct props.
@@ -225,6 +230,7 @@ describe('TeacherHomepage', () => {
         courses={[]}
         sections={[]}
         codeOrgUrlPrefix="http://localhost:3000/"
+        isRtl={false}
       />
     );
     // Check if Sections receives correct props.
@@ -256,6 +262,7 @@ describe('TeacherHomepage', () => {
         courses={courses}
         sections={[]}
         codeOrgUrlPrefix="http://localhost:3000/"
+        isRtl={false}
       />
     );
     const recentCourses = wrapper.childAt(5);
@@ -277,7 +284,7 @@ describe('TeacherHomepage', () => {
     const coursesContentContainer = recentCourses.childAt(0);
     assert.equal(coursesContentContainer.name(), 'ContentContainer');
     assert.equal(coursesContentContainer.props().heading, 'Recent Courses');
-    assert.equal(coursesContentContainer.props().linkText, 'View all courses');
+    assert.equal(coursesContentContainer.props().linkText, 'Find a course');
     assert.equal(coursesContentContainer.props().link, '/courses');
     assert.equal(coursesContentContainer.props().showLink, true);
     // Check if a CourseCards are rendered for each course.
@@ -301,6 +308,7 @@ describe('TeacherHomepage', () => {
         courses={[]}
         sections={[]}
         codeOrgUrlPrefix="http://localhost:3000/"
+        isRtl={false}
       />
     );
     const recentCourses = wrapper.childAt(5);
@@ -313,7 +321,7 @@ describe('TeacherHomepage', () => {
     const coursesContentContainer = recentCourses.childAt(0);
     assert.equal(coursesContentContainer.name(), 'ContentContainer');
     assert.equal(coursesContentContainer.props().heading, 'Recent Courses');
-    assert.equal(coursesContentContainer.props().linkText, 'View all courses');
+    assert.equal(coursesContentContainer.props().linkText, 'Find a course');
     assert.equal(coursesContentContainer.props().link, '/courses');
     assert.equal(coursesContentContainer.props().showLink, true);
     // Check if a courses SetUpMessage is rendered.
@@ -324,7 +332,7 @@ describe('TeacherHomepage', () => {
     assert.equal(coursesSetUpMessage.childAt(1).text(), 'Assign a course to your classroom or start your own course.');
     assert.equal(coursesSetUpMessage.childAt(2).name(), 'ProgressButton');
     assert.equal(coursesSetUpMessage.childAt(2).props().href, '/courses');
-    assert.equal(coursesSetUpMessage.childAt(2).props().text, 'View courses');
+    assert.equal(coursesSetUpMessage.childAt(2).props().text, 'Find a course');
   });
 
 });
