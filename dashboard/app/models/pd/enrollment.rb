@@ -123,8 +123,6 @@ class Pd::Enrollment < ActiveRecord::Base
   #   otherwise return only those without completed surveys. Defaults to true.
   # @return [Enumerable<Pd::Enrollment>]
   def self.filter_for_survey_completion(enrollments, select_completed = true)
-    # NEED TO ACCOUNT FOR TEACHERCON SURVEYS HERE
-
     raise 'Expected enrollments to be an Enumerable list of Pd::Enrollment objects' unless
         enrollments.is_a?(Enumerable) && enrollments.all? {|e| e.is_a?(Pd::Enrollment)}
 

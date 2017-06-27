@@ -184,29 +184,4 @@ class Pd::TeacherconSurvey < ActiveRecord::Base
 
     }.freeze
   end
-
-  def self.summarize(teachercon_surveys)
-    # Hash representing overall score sums
-    sum_hash = Hash.new(0)
-
-    teachercon_surveys.each do |response|
-      response_hash = JSON.parse(response.form_data).symbolize_keys
-
-      response_hash.each do |k, v|
-        # Is this a multiple choice question?
-        if options.has_key? k
-          sum_hash[k] += options[k].index(v) + 1
-        else
-          # If not, concat it to the list of responses
-          sum_hash[k] == 0 ? sum_hash[k] = [v] : sum_hash[k] << v
-        end
-      end
-    end
-
-    sum_hash.each do |k, v|
-      if options.has_key? k
-        sum_hash[k] = v / teachercon_surveys.count.to_f
-      end
-    end
-  end
 end
